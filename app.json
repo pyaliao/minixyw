@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/wenhua/wenhua",
+    "pages/yc/yc",
+    "pages/by/by",
+    "pages/jlp/jlp",
+    "pages/ly/ly",
+    "pages/ty/ty",
+    "pages/music/music",
+    "pages/jy/jy",
+    "pages/ms/ms",
+    "pages/qz/qz",
+    "pages/logs/logs",
+    "pages/video/video",
+    "pages/subject/subject",
+    "pages/activity/activity"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "西影网",
+    "navigationBarTextStyle":"white"
+  },
+  "debug": true
+}

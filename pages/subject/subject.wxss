@@ -1,0 +1,146 @@
+.mod {
+    background-color: #700505;
+}
+
+.title {
+    height:110rpx;
+    line-height:110rpx;
+    text-align:center;
+    overflow: hidden;
+    font-size: 36rpx;
+}
+
+.upImage {
+    width: 100%;
+    display: flex;
+    box-sizing:border-box;
+    padding: 20rpx;
+}
+.upImage > view {
+    flex: 1;
+    width: 330rpx;
+    height: 495rpx;
+}
+.upImage > view > image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.para {
+    text-indent: 2em;
+    text-align: justify;
+    font-size: 30rpx;
+    /* padding: 20rpx 0; */
+    padding: 20rpx;
+}
+.videoMod {
+    padding:20rpx 0 0rpx;
+    /* border-top: 1rpx solid #dedede; */
+}
+.videoMod .player > video {
+    display: block;
+    width: 675rpx;
+    height: 440rpx;
+    margin: 0 auto;
+}
+
+swiper {
+    margin: 0;
+    width: 100%;
+    height:426rpx;
+    margin: 0 auto;
+    padding:0 20rpx;
+    box-sizing:border-box;
+}
+swiper image {
+    width: 100%;
+}
+.sbuject-slide-image {
+    display: block;
+    width: 100%;
+}
+
+
+.banner {
+    display: block;
+    width: 100%;
+    margin-top: 80rpx;
+}
+
+.haibao {
+    display: -webkit-box; 
+    display: -moz-box;   
+    display: -webkit-flex;  
+    display: -moz-flex;  
+    display: -ms-flexbox; 
+    display: flex;  
+    flex-flow: row wrap;
+    overflow: hidden;
+    padding: 0 20rpx;
+}
+.haibao .haibaotu {
+    width: 335rpx;
+    margin-bottom: 5rpx;
+    /* float: left; */
+}
+.haibao .haibaotu:nth-child(odd) {
+    margin-right: 3rpx;
+}
+.haibao .haibaotu > image {
+    display: block;
+    width: 100%;
+}
+
+.blockwidth {
+    /* width: 675rpx; */
+    width: 710rpx;
+    margin: 0 auto;
+    border-top:1rpx solid #dedede;
+    padding: 20rpx 0 40rpx;
+    background: url('//img.1958xy.com/img/subject/%E8%89%B2%E5%9D%97.png') no-repeat;
+    background-position: 52% 0;
+    background-size: 128% 100%;
+    position: relative;
+}
+.midimg > image {
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing:border-box;
+}
+
+.dian, .tiao {
+    display: block;
+    width: 100%;
+    position: absolute;
+}
+.dian {
+    left: 0;
+    top: 0;
+}
+.tiao {
+    left: 0;
+    bottom: 0;
+}
+
+.juzhao image {
+    display: block;
+    width: 100%;
+}
+#juzhao image {
+    padding: 4rpx 20rpx;
+    box-sizing: border-box;
+}
+.pianhua image {
+    display: block;
+    width: 100%;
+    padding: 4rpx 20rpx;
+    box-sizing: border-box;
+}
+
+
+.twt > view > image {
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}

@@ -1,0 +1,101 @@
+
+<view class="section section_gap">
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;white-space:nowrap;display:flex;">
+    <block  wx:for="{{listName}}">
+      <navigator  class="scroll-navigator-item_H {{item.text=='榜样'?'color':''}}"  url="{{item.url}}" open-type="redirect">{{item.text}}</navigator>
+    </block> 
+  </scroll-view>
+  <view class="arrow" bindtap='showList'>
+      <view id="qz" class="iconfont icon-jiantou {{listFlag?'restore':'rotate'}}"></view>
+  </view>
+</view>
+
+<view class="list" hidden="{{listFlag}}">
+    <block  wx:for="{{listName}}">
+      <navigator url="{{item.url}}" open-type="redirect"  class="{{item.text=='榜样'?'color':''}}">{{item.text}}</navigator>
+    </block>
+</view>
+
+<swiper indicator-dots="{{indicatorDots}}" indicator-color='{{indicatorColor}}' indicator-active-color='{{indicatorActiveColor}}' autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{swiper.image}}">
+    <swiper-item>
+      <navigator url="{{item.to}}"><image src="{{item.imageUrl}}" class="slide-image"  mode="widthFix"></image></navigator>
+    </swiper-item>
+  </block>
+</swiper>
+
+<import src="../template/image/image.wxml" />
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{bangyang.imageTitle}}</text>
+  </view>
+  <view class='imageHTW'>
+    <block wx:for="{{bangyang.image}}" wx:key="">
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{jianshou.imageTitle}}</text>
+  </view>
+  <view class='imageHTW'>
+    <block wx:for="{{jianshou.image}}" >
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{aixin.imageTitle}}</text>
+  </view>
+  <view class='imageVTW'>
+    <block wx:for="{{aixin.image}}" wx:key="">
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{bufan.imageTitle}}</text>
+  </view>
+  <view class='imageHTW'>
+    <block wx:for="{{bufan.image}}" wx:key="">
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{lizhi.imageTitle}}</text>
+  </view>
+  <view class='imageHTW'>
+    <block wx:for="{{lizhi.image}}" wx:key="">
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{jingye.imageTitle}}</text>
+  </view>
+  <view class='imageHTW'>
+    <block wx:for="{{jingye.image}}" wx:key="">
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+<view class="imageModBox">
+  <view>
+    <text class="imageTitle">{{chengxin.imageTitle}}</text>
+  </view>
+  <view class='imageHTW'>
+    <block wx:for="{{chengxin.image}}" wx:key="">
+      <template is="imageMod" data="{{item}}"></template>
+    </block> 
+  </view>
+</view>
+<import src="../template/footer/footer.wxml" />
+<template is="footer"></template>

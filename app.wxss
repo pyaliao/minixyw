@@ -1,0 +1,235 @@
+/**app.wxss**/
+@import './pages/template/footer/footer.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+} 
+text {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*字体图标样式*/
+@font-face {
+  font-family: 'iconfont';  /* project id 684339 */
+  src: url('//at.alicdn.com/t/font_684339_q65h6g533al.eot');
+  src: url('//at.alicdn.com/t/font_684339_q65h6g533al.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_684339_q65h6g533al.woff') format('woff'),
+  url('//at.alicdn.com/t/font_684339_q65h6g533al.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_684339_q65h6g533al.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouji1:before { content: "\e601"; }
+
+.icon-zan:before { content: "\e600"; }
+
+.icon-pc:before { content: "\e613"; }
+
+.icon-tiaozhuan:before { content: "\e61d"; }
+
+.icon-yonghuzhongxin:before { content: "\e617"; }
+
+.icon-shouji01:before { content: "\e623"; }
+
+.icon-weibiaoti15:before { content: "\e621"; }
+
+.icon-yanzhengma:before { content: "\e68a"; }
+
+.icon-ego-hot:before { content: "\e60b"; }
+
+.icon-iconfontzhizuobiaozhun22:before { content: "\e615"; }
+
+.icon-share1:before { content: "\e616"; }
+
+.icon-Close:before { content: "\e62f"; }
+
+.icon-iconfontzhizuobiaozhun023130:before { content: "\e684"; }
+
+.icon-cry:before { content: "\e6b8"; }
+
+.icon-huanyihuan:before { content: "\e666"; }
+
+.icon-jiantou1:before { content: "\e604"; }
+
+.icon-yanzhengma1:before { content: "\e605"; }
+
+.icon-jiantou:before { content: "\e612"; }
+
+.icon-jiantouxiangshang:before { content: "\e622"; }
+
+.icon-yonghu-tianchong:before { content: "\e670"; }
+
+.icon-share:before { content: "\e62d"; }
+
+.icon-zhuye:before { content: "\e620"; }
+
+.icon-xiazai:before { content: "\e64f"; }
+
+.icon-huidaodingbu:before { content: "\e60d"; }
+
+.icon-bofangqi:before { content: "\e603"; }
+
+.icon-shouji:before { content: "\e607"; }
+
+.selected {
+  color: #00a5e0;
+}
+
+.section_gap {
+  position:fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  z-index:10000;
+  background-color: #fafafa;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-view_H {
+ position: absolute;
+ top: 0;
+ left:0;
+ z-index:-80;
+}
+
+.scroll-navigator-item_H {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 120rpx;
+  display: inline-block;
+  background-color: #fafafa;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+
+.arrow {
+  width:80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-shadow: 1rpx 0 0 0rpx  rgba(0,0,0,0.2) inset;
+  -webkit-shadow: 1rpx 0 0 0rpx  rgba(0,0,0,0.2) inset;
+  -o-box-shadow: 1rpx 0 0 0rpx  rgba(0,0,0,0.2) inset;
+  -ms-box-shadow: 1rpx 0 0 0rpx  rgba(0,0,0,0.2) inset;
+  -moz-box-shadow: 1rpx 0 0 0rpx  rgba(0,0,0,0.2) inset;
+   background-color: #fafafa;
+}
+
+.arrow::before, .arrow::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  bottom:30%;
+  left: 0;
+  right:20%;
+  box-shadow: 0 0 6rpx rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 6rpx rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 6rpx rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 6rpx rgba(0,0,0,0.3);
+  -ms-box-shadow: 0 0 6rpx rgba(0,0,0,0.3);
+  z-index:-1;
+}
+.iconfont {
+  text-align: center;
+  font-size: 50rpx;
+  transition: all 300ms;
+}
+
+
+.list {
+  /* margin-top: 81rpx; */
+  width: 100%;
+  position: fixed;
+  top: 80rpx;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.05);
+  z-index: 10000;
+}
+.list  navigator {
+  width: 20%;
+  display: inline-block;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+}
+.navigator-hover {
+  color: #700505;
+}
+.rotate {
+  transform:rotateZ(180deg);
+  -ms-transform:rotateZ(-180deg); 	/* IE 9 */
+  -moz-transform:rotateZ(-180deg); 	/* Firefox */
+  -webkit-transform:rotateZ(-180deg); /* Safari 和 Chrome */
+  -o-transform:rotateZ(-180deg); 	/* Opera */
+}
+.restore {
+    transform:rotateZ(0deg);
+    -ms-transform:rotateZ(0deg); 	/* IE 9 */
+    -moz-transform:rotateZ(0deg); 	/* Firefox */
+    -webkit-transform:rotateZ(0deg); /* Safari 和 Chrome */
+    -o-transform:rotateZ(0deg); 	/* Opera */
+}
+
+.slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+swiper {
+  margin: 80rpx 0 0;
+  /* 此处给轮播图最外层标签一个固定高度，内部标签继承其高度并overflow：hidden，
+  内部图片宽度一定，高度自适应，多出部分会被截掉 */
+  height: 420rpx;
+}
+swiper navigator {
+  width: 100%;
+  height: 100%;
+}
+
+@import './pages/template/image/image.wxss';
+.imageHModBox {
+  width: 100%;
+}
+.imageHTW, .imageVTW {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+}
+.imageModBox  .imageTitle {
+  display: block;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+  text-indent: 20rpx;
+  font-size: 38rpx;
+} 
+.color {
+  color:white;
+  background: rgba(255,0,0,0.8);
+  background: -webkit-linear-gradient(top, #ff9800 , #f00);
+  background: -o-linear-gradient(bottom, #ff9800 , #f00);
+  background: -moz-linear-gradient(bottom, #ff9800 , #f00);
+  background: linear-gradient(bottom, #ff9800 , #f00);
+}

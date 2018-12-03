@@ -1,0 +1,31 @@
+
+<view class="section section_gap">
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;white-space:nowrap;display:flex;">
+    <block  wx:for="{{listName}}">
+      <navigator  class="scroll-navigator-item_H" url="{{item.url}}" open-type="navigate">{{item.text}}</navigator>
+    </block> 
+  </scroll-view>
+  <view class="arrow" bindtap='showList'>
+      <view id="qz" class="iconfont icon-jiantou {{listFlag?'restore':'rotate'}}"></view>
+  </view>
+</view>
+
+<view class="list" hidden="{{listFlag}}">
+    <block  wx:for="{{listName}}">
+      <navigator url="{{item.url}}" open-type="navigate">{{item.text}}</navigator>
+    </block>
+</view>
+<view class="cont">
+    <block wx:for="{{pd.modList}}">
+        <block wx:if="{{item.TYPE == 'hd_title' && item.first.TITLE}}">
+            <view class="title">{{item.first.TITLE}}</view>
+        </block>
+        <block wx:else><view class="title" hidden="true"></view></block>
+        <block wx:if="{{item.TYPE == 'hd_content' && item.second.PCONTENT}}">
+            <view class="para"><rich-text nodes="{{item.second.PCONTENT}}"></rich-text> </view>
+        </block>
+        <block wx:else></block>
+    </block>
+</view>
+<import  src="../template/footer/footer.wxml" />
+<template  is="footer"></template>

@@ -1,0 +1,36 @@
+.imageMod {
+  width: 49.5%;
+  /* float: left; */
+  flex: 0 1 auto;
+  margin-bottom: 20rpx;
+}
+.imageMod:nth-child(odd) {
+  margin-right:1%;
+}
+.imageMod  > navigator {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.imageHTW .imageMod > navigator:first-child {
+  height: 206.72rpx;
+}
+.imageVTW .imageMod > navigator:first-child {
+  height: 556.875rpx;
+}
+.imageHTW navigator > image {
+  display: block;
+  width: 100%;
+  /* height: 206.72rpx; */
+}
+.imageVTW navigator > image {
+  display: block;
+  width: 100%;
+  /* height: 556.875rpx; */
+}
+.imageMod  > navigator > text {
+  display: block;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}

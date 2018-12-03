@@ -1,0 +1,16 @@
+.title {
+    height:110rpx;
+    line-height:110rpx;
+    text-align:center;
+    overflow: hidden;
+    font-size: 36rpx;
+}
+.para {
+    text-indent: 2em;
+    text-align: justify;
+    font-size: 30rpx;
+    padding: 0 30rpx 20rpx;
+}
+.cont {
+    margin-top: 80rpx;
+}

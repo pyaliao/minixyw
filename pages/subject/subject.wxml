@@ -1,0 +1,359 @@
+
+<view class="section section_gap">
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;white-space:nowrap;display:flex;">
+    <block  wx:for="{{listName}}">
+      <navigator  class="scroll-navigator-item_H" url="{{item.url}}" open-type="navigate">{{item.text}}</navigator>
+    </block> 
+  </scroll-view>
+  <view class="arrow" bindtap='showList'>
+      <view id="qz" class="iconfont icon-jiantou {{listFlag?'restore':'rotate'}}"></view>
+  </view>
+</view>
+
+<view class="list" hidden="{{listFlag}}">
+    <block  wx:for="{{listName}}">
+      <navigator url="{{item.url}}" open-type="navigate">{{item.text}}</navigator>
+    </block>
+</view>
+
+
+<view wx:for="{{pd.modList}}" class="mod">
+    <view wx:if="{{item.TYPE == 'zt_banner_pic'}}">
+        <image src="{{item.first.PIC}}" class="banner" mode="widthFix"></image>
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_ypxs'}}" class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix" class="dian" />
+        <view class="videoMod">
+            <block wx:if="{{item.second.TITLE != ''}}">
+                <view class="title">{{item.second.TITLE}}</view>
+            </block>
+            <block wx:else><view hidden="true"></view></block>
+            <view class="player"><video src="{{item.first.PLAYADDR}}"></video></view>
+        </view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />   
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_twt'}}"  class="blockwidth twt">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix" class="dian"  />
+        <view><image src="{{item.first.PIC}}" mode="widthFix"/></view>
+        <view class="para">
+            <rich-text nodes="{{item.third.PCONTENT}}"></rich-text>    
+        </view>
+        <view><image src="{{item.forth.PIC}}" mode="widthFix"/></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />   
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_cw'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix" class="dian"  />
+        <block wx:if="{{item.first.TITLE != ''}}">
+            <view class="title">{{item.first.TITLE}}</view>        
+        </block>
+        <block wx:else><view hidden="true"></view></block>
+        <view class="para"><rich-text nodes="{{item.second.PCONTENT}}"></rich-text> </view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_tuwen'}}"  class="blockwidth"> 
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix" class="dian"  />
+        <block wx:if="{{item.forth.TITLE != ''}}">
+            <view class="title">{{item.forth.TITLE}}</view>
+        </block>
+        <block wx:else><view  hidden="true"></view></block>
+        <view class="midimg"><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+        <block wx:if="{{item.first.TITLE != ''}}">
+            <view class="title">{{item.first.TITLE}}</view>
+        </block>
+        <block wx:else><view hidden="true"></view></block>
+        <view class="para"><rich-text nodes="{{item.third.PCONTENT}}"></rich-text></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_wentu'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix" class="dian"  />
+        <block wx:if="{{item.forth.TITLE != ''}}">
+            <view class="title">{{item.forth.TITLE}}</view>
+        </block>
+         <block wx:else><view  hidden="true"></view></block>
+        <view class="midimg"><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+        <block wx:if="{{item.first.TITLE != ''}}">
+            <view class="title">{{item.first.TITLE}}</view>
+        </block>
+        <block wx:else><view  hidden="true"></view></block>
+        <view class="para"><rich-text nodes="{{item.third.PCONTENT}}"></rich-text></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_zlbt_yw'}}" data-set="{{index}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{item.ninth.TITLE != ''}}" >
+            <view class="title">{{item.ninth.TITLE}}</view>
+        </block>
+        <swiper indicator-dots="{{indicatorDots}}" indicator-color='{{indicatorColor}}' indicator-active-color='{{indicatorActiveColor}}' autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" bindchange="bindchange" >
+              <block wx:if="{{item.first.PIC}}">
+                <swiper-item>
+                   <image src="{{item.first.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.second.PIC}}">
+                <swiper-item>
+                   <image src="{{item.second.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.third.PIC}}">
+                <swiper-item>
+                   <image src="{{item.third.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.forth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.forth.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.fifth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.fifth.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.sixth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.sixth.PIC}}" class="subject-slide-image"   mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.seventh.PIC}}">
+                <swiper-item>
+                   <image src="{{item.seventh.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.eighth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.eighth.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>       
+        </swiper>
+        <view class="para"><rich-text nodes="{{item.tenth.PCONTENT}}"></rich-text></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_zw_ylbt'}}" data-set="{{index}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{item.ninth.TITLE != ''}}" >
+            <view class="title">{{item.ninth.TITLE}}</view>
+        </block>
+        <swiper indicator-dots="{{indicatorDots}}" indicator-color='{{indicatorColor}}' indicator-active-color='{{indicatorActiveColor}}' autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" bindchange="bindchange" >
+              <block wx:if="{{item.first.PIC}}">
+                <swiper-item>
+                   <image src="{{item.first.PIC}}" class="subject-slide-image"   mode="widthFix" ></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.second.PIC}}">
+                <swiper-item>
+                   <image src="{{item.second.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.third.PIC}}">
+                <swiper-item>
+                   <image src="{{item.third.PIC}}" class="subject-slide-image"   mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.forth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.forth.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.fifth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.fifth.PIC}}" class="subject-slide-image"   mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.sixth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.sixth.PIC}}" class="subject-slide-image"   mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.seventh.PIC}}">
+                <swiper-item>
+                   <image src="{{item.seventh.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>
+              <block wx:if="{{item.eighth.PIC}}">
+                <swiper-item>
+                   <image src="{{item.eighth.PIC}}" class="subject-slide-image"  mode="widthFix"></image>
+                </swiper-item>
+              </block>       
+        </swiper>
+        <view class="para"><rich-text nodes="{{item.tenth.PCONTENT}}"></rich-text></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_movie_detail'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{pd.NAME != ''}}">
+            <view class="title">{{pd.NAME}}</view>
+        </block>
+        <block wx:else><view  hidden="true"></view></block>
+        <view class="upImage">
+            <view><image src="{{item.first.PIC}}" /></view>
+            <view><image src="{{item.forth.PIC}}" /></view>
+        </view>
+        <view class="para"><rich-text nodes="{{item.third.PCONTENT}}"></rich-text></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_dyhb'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{item.sixth.TITLE }}">
+            <view class="title">{{item.sixth.TITLE}}</view>
+        </block>
+        <block wx:else>
+            <view class="title">电影海报</view>
+        </block>
+        <view class="haibao">
+            <view class="haibaotu"><image src="{{item.first.PIC}}" mode="widthFix"/></view>
+            <view class="haibaotu"><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+            <view class="haibaotu"><image src="{{item.third.PIC}}" mode="widthFix"/></view>
+            <view class="haibaotu"><image src="{{item.forth.PIC}}" mode="widthFix"/></view>
+        </view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_jcjz'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{item.ninth.TITLE != ''}}">
+            <view class="title">{{item.ninth.TITLE}}</view>
+        </block>
+        <block wx:else>
+            <view class="title">精彩剧照</view>
+        </block>
+        <view class="juzhao" id="juzhao">
+            <view><image src="{{item.first.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.third.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.forth.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.fifth.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.sixth.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.seventh.PIC}}" mode="widthFix"/></view>
+            <view><image src="{{item.eighth.PIC}}" mode="widthFix"/></view>
+        </view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_jcjz_wen'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{item.ninth.TITLE != ''}}">
+            <view class="title">{{item.ninth.TITLE}}</view>
+        </block>
+        <block wx:else>
+            <view class="title">精彩剧照</view>   
+        </block>
+        <view class="juzhao">
+            <block wx:if="{{item.first.PIC}}">
+                <view>
+                    <view><image src="{{item.first.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.first.TITLE != ''}}">
+                        <view class="title">{{item.first.TITLE}}</view>
+                    </block>
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.first.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.second.PIC}}">
+                <view>
+                    <view><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.second.TITLE != ''}}">
+                        <view class="title">{{item.second.TITLE}}</view>
+                    </block>
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.second.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.third.PIC}}">
+                <view>
+                    <view><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.second.TITLE != ''}}">
+                        <view class="title">{{item.second.TITLE}}</view>
+                    </block>
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.third.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.forth.PIC}}">
+                <view>
+                    <view><image src="{{item.third.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.third.TITLE != ''}}">
+                        <view class="title">{{item.third.TITLE}}</view>
+                    </block>
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.forth.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.fifth.PIC}}">
+                <view>
+                    <view><image src="{{item.forth.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.forth.TITLE != ''}}">
+                        <view class="title">{{item.forth.TITLE}}</view>
+                    </block>
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.fifth.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.sixth.PIC}}">
+                <view>
+                    <view><image src="{{item.fifth.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.fifth.TITLE != ''}}">
+                        <view class="title">{{item.fifth.TITLE}}</view>
+                    </block>   
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.sixth.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.seventh.PIC}}">
+                <view>
+                    <view><image src="{{item.sixth.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.sixth.TITLE != ''}}">
+                        <view class="title">{{item.sixth.TITLE}}</view>
+                    </block>
+                    <block wx:else><view hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.seventh.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+            <block wx:if="{{item.eighth.PIC}}">
+                <view>
+                    <view><image src="{{item.seventh.PIC}}" mode="widthFix"/></view>
+                    <block wx:if="{{item.seventh.TITLE != ''}}">
+                        <view class="title">{{item.seventh.TITLE}}</view>
+                    </block>
+                    <block wx:else><view  hidden="true"></view></block>
+                    <view class="para"><rich-text nodes="{{item.eighth.PCONTENT}}"></rich-text></view>
+                </view>
+            </block>
+        </view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+    <view wx:if="{{item.TYPE == 'zt_dyph'}}"  class="blockwidth">
+        <image src="//img.1958xy.com/img/subject/%E7%82%B9%E7%82%B9.jpg" mode="widthFix"  class="dian" />
+        <block wx:if="{{item.sixth.TITLE != ''}}">
+            <view class="title">{{item.sixth.TITLE}}</view>
+        </block>
+        <block wx:else>
+            <view class="title">电影片花</view>
+        </block>
+        <view class="pianhua">
+            <block wx:if="{{item.first.PIC}}">
+                <view><image src="{{item.first.PIC}}" mode="widthFix"/></view>
+            </block>
+            <block wx:if="{{item.second.PIC}}">
+                <view><image src="{{item.second.PIC}}" mode="widthFix"/></view>
+            </block>
+            <block wx:if="{{item.third.PIC}}">
+               <view><image src="{{item.third.PIC}}" mode="widthFix"/></view>
+            </block>
+            <block wx:if="{{item.forth.PIC}}">
+               <view><image src="{{item.forth.PIC}}" mode="widthFix"/></view>
+            </block>
+        </view>
+        <block wx:if="{{item.seventh.TITLE != ''}}">
+            <view class="title">{{item.seventh.TITLE}}</view>
+        </block>
+        <block wx:else="{{item.seventh.TITLE}}">
+            <view class="title">幕后制作</view>
+        </block>
+        <view class="para"><rich-text nodes="{{item.fifth.PCONTENT}}"></rich-text></view>
+        <image src="//img.1958xy.com/img/subject/%E6%A8%AA%E6%9D%A1.jpg" mode="widthFix" class="tiao" />  
+    </view>
+</view>
+
+
+
+
+<import  src="../template/footer/footer.wxml" />
+<template  is="footer"></template>

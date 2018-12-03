@@ -1,0 +1,10 @@
+<template name="imageMod">
+  <view class='imageMod'>
+    <navigator url="{{item.to}}">
+        <image src='{{item.imageUrl}}'  class='imageHImg' mode="widthFix"></image>   
+    </navigator>
+    <navigator url="{{item.to}}">
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</template>

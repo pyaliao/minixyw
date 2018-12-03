@@ -1,0 +1,5 @@
+<template name="footer">
+    <view class="footer">
+        <image src="//img.1958xy.com/mimg/minilogo.png" mode="widthFix"></image>
+    </view>
+</template>

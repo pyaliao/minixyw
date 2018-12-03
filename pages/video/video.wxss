@@ -1,0 +1,218 @@
+
+.xyVideoBox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index:999;
+
+}
+.xyVideo {
+    display: block;
+    width: 750rpx;
+    height: 450rpx;
+    object-fit: fill;
+    /* position: fixed; */
+}
+.tabList {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    background-color: #fff;
+    color: #666;
+    margin-top:130rpx;
+    border-top:1rpx solid #dedede;
+}
+.tabList > view {
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    transition: all 500ms;
+}
+.tabList > view:last-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    border-bottom: 4rpx solid #00a5e0;
+    transition: all 500ms;
+}
+
+
+.videoBox {
+    position: fixed;
+    top: 660rpx;
+    color: #666;
+    padding:20rpx 0 20rpx 0;
+    box-sizing:border-box;
+    /* height: 600rpx; */
+    /* box-sizing: border-box; */
+    /* padding-top: 570rpx; */
+}
+.videoInfo {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 10rpx;
+}
+.videoInfo .videoImg,
+.videoInfo .videoText {
+    width: 50%;
+    height: 210.9375rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+}
+
+.videoInfo .videoImg > navigator,
+.videoInfo .videoText > navigator {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.videoInfo .videoImg  image {
+    width: 100%;
+    height: 100%;
+}
+.videoInfo .videoText  text {
+    width: 100%;
+    height: 100%;
+    display:block;
+    font-size: 32rpx;
+    text-align: justify;
+}
+
+.xiangqing {
+    position: fixed;
+    left: 0;
+    top: 460rpx;
+    width: 100%;
+    z-index: 1000;
+}
+.videoTitle {
+    position: relative;
+    padding: 10rpx 100rpx 10rpx 20rpx;
+    font-size: 34rpx;
+    color:#666;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.videoDetail {
+    font-size: 28rpx;
+    color: #999;
+    padding: 20rpx;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-indent: 2em;
+    text-align: justify;
+    line-height: 40rpx;
+}
+#jiantou {
+    position:absolute;
+    top:6rpx;
+    right:20rpx;
+}
+
+
+
+.reduBox {
+    overflow: hidden;
+    height: 60rpx;
+    padding-left:20rpx;
+    color:#444;
+    background-color: rgba(255, 255, 255, 1);
+}
+.reduBox > view:nth-child(1) {
+    float: left;
+    height: 100%;
+    line-height: 60rpx;
+    color:#444;
+}
+.reduBox > view:nth-child(1) > view {
+    margin-right: 4rpx;
+    font-size: 40rpx;
+    color:#444;
+}
+.reduBox > view:nth-child(2) {
+    height: 100%;
+    float: left;
+    line-height: 60rpx;
+    margin-right: 20rpx;
+    font-size: 30rpx;
+    color:#444;
+}
+.redu {
+    height: 100%;
+    float: left;
+    line-height: 60rpx;
+    position:relative;
+    margin-top: 4rpx;
+}
+.redu view {
+    display: block;
+    width: 8rpx;
+    background-color: #d0d0d6;
+    position:absolute;
+    bottom:33%;
+}
+.redu view:nth-child(1) {
+    height: 8rpx;
+    left:0;
+}
+.redu view:nth-child(1).bg1 {
+    background: -webkit-linear-gradient(#ff9800, #ff8700);
+    background: -o-linear-gradient(#ff9800, #ff8700);
+    background: -moz-linear-gradient(#ff9800, #ff8700);
+    background: linear-gradient(#ff9800, #ff8700);
+}
+.redu view:nth-child(2) {
+    height: 14rpx;   
+    left:7rpx;
+}
+.redu view:nth-child(2).bg2 {
+    background: -webkit-linear-gradient(#ff8500, #ff7400);
+    background: -o-linear-gradient(#ff8500, #ff7400);
+    background: -moz-linear-gradient(#ff8500, #ff7400);
+    background: -linear-gradient(#ff8500, #ff7400);
+}
+.redu view:nth-child(3) {
+    height: 18rpx;  
+    left: 14rpx;
+}
+.redu view:nth-child(3).bg3 {
+    background: -webkit-linear-gradient(#ff7200, #ff6100);
+    background: -o-linear-gradient(#ff7200, #ff6100);
+    background: -moz-linear-gradient(#ff7200, #ff6100);
+    background: -linear-gradient(#ff7200, #ff6100);
+}
+.redu view:nth-child(4) {
+    height: 22rpx;   
+    left: 21rpx;
+}
+.redu view:nth-child(4).bg4 {
+    background: -webkit-linear-gradient(#ff5e00, #ff4d00);
+    background: -o-linear-gradient(#ff5e00, #ff4d00);
+    background: -moz-linear-gradient(#ff5e00, #ff4d00);
+    background: -linear-gradient(#ff5e00, #ff4d00);
+}
+.redu view:nth-child(5) {
+    height: 26rpx;  
+    left: 28rpx;   
+}
+.redu view:nth-child(5).bg5 {
+    background: -webkit-linear-gradient(#ff4c00, #ff3b00);
+    background: -o-linear-gradient(#ff4c00, #ff3b00);
+    background: -moz-linear-gradient(#ff4c00, #ff3b00);
+    background: -linear-gradient(#ff4c00, #ff3b00);
+}
+.redu view:nth-child(6) {
+    height: 32rpx; 
+    left: 35rpx;
+}
+.redu view:nth-child(6).bg6 {
+    background: -webkit-linear-gradient(#ff4c00, #ff2700);
+    background: -o-linear-gradient(#ff4c00, #ff2700);
+    background: -moz-linear-gradient(#ff4c00, #ff2700);
+    background: -linear-gradient(#ff4c00, #ff2700);
+}

@@ -1,0 +1,11 @@
+.footer {
+    padding: 50rpx 0 40rpx;
+    border-top: 1rpx solid #dedede;
+}
+
+.footer > image {
+    display: block;
+    width: 300rpx;
+    /* height: 120rpx; */
+    margin: 0 auto;
+}
